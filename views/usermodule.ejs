@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <form action="/add" method="get" >
+    <table border="1" align=center>
+      <input type="hidden" name="id" value="<%=i%>">
+      <tr>
+        <td>First Name </td>
+        <td><input type="text" name="fname" placeholder="Enter First Name"</td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td><input type="text" name="lname" placeholder="Enter Last Name"</td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input type="email" name="Email" placeholder="Enter Marks of Email"</td>
+      </tr>
+      <tr>
+        <td>Role</td>
+        <td><input type="text" name="Role" placeholder="Enter Marks of Role"        </td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <th><input type="radio" id="Active" name="Status">
+            <label for="Active">Active</label>
+            <input type="radio" id="Inactive" name="Status">
+            <label for="Inactive">Inactive</label></th>
+      </tr>
+      <tr>
+        <td>Created</td>
+        <td><input type="datetime-local" name="Created" placeholder="Enter Marks of Created"></td>
+      </tr>
+      <tr>
+        <th colspan="2" ><a href="/usermodule"><button>SUBMIT</button></a></th>
+      </tr>
+    </table>
+  </form>
+  
+  <table border="1" align=center>
+    <tr >
+      <th>First Name</th><th>Last Name</th><th>Email</th><th>Role</th><th>Status</th><th>Created</th><th>Delete</th><th>Edit</th>
+    </tr>
+    <% for(var i=0; i< data.length; i++) {%>
+      <tr>
+        <td>
+          <%= data[i].FirstName %>
+        </td>
+        <td>
+          <%= data[i].LastName %>
+        </td>
+        <td>
+          <%= data[i].Email %>
+        </td>
+        <td>
+          <%= data[i].Role %>
+        </td>
+        <td>
+          <%= data[i].Status %>
+        </td>
+        <td>
+          <%= data[i].Created %>
+        </td>
+            <th ><button ><a href="/delete?id=<%=i%>";">Delete</a></button>
+            </th>
+            <th><button ><a href="/usermodule?id=<%=i%>";">Edit</a></button></th>
+      </tr>
+      <% } %>
+  </table>
+</body>
+
+</html>
