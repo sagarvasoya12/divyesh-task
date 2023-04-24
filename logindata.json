@@ -1,1 +1,1 @@
-[{"Email": "management@gmail.com", "password":"management"},{"Email": "staff@gmail.com", "password":"staff"}]
+[{"Email": "management@gmail.com", "password":"management", "Role":"Management"},{"Email": "staff@gmail.com", "password":"staff","Role":"Staff"}]
