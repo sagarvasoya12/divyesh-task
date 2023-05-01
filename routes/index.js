@@ -13,14 +13,14 @@ router.get('/', function(req, res, next) {
   let login =convert.find(value => value.Email==req.query.email && value.password == req.query.password)
   console.log(login);
   if (login) {
-    res.redirect('/dashbroad') 
+    res.redirect('/dashbroad?role=' + login["Role"]) 
   } else {
-    res.render('index',  {});
+    res.render('index');
   }
 });
 
 router.get('/dashbroad', function(req, res, next) {
- res.render('dashbroad',{})
+ res.render('dashbroad',  { role: req.query.role})
 });
 
 
